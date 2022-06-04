@@ -1,0 +1,40 @@
+version: "3"
+services:
+  redis:
+    image: redis:7.0.0
+    env_file:
+    - redis/.env
+  mcserver1:
+    build: ./server
+    env_file:
+    - server/.env
+    depends_on:
+    - worldql
+    - redis
+    volumes:
+    - "./config/config1.yml:/app/plugins/Mammoth/config.yml"
+  mcserver2:
+    build: ./server
+    env_file:
+    - server/.env
+    depends_on:
+    - worldql
+    - redis
+    volumes:
+    - "./config/config2.yml:/app/plugins/Mammoth/config.yml"
+  velocity:
+    build: velocity
+    ports:
+    - "25565:25565"
+
+  postgresql:
+    image: postgres:14
+    env_file: ./postgres/.env
+  worldql:
+    build: ./worldql
+    env_file: ./worldql/.env
+    depends_on:
+    - postgresql
+
+
+  

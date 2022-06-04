@@ -1,0 +1,35 @@
+# WorldQL Connection Details
+worldql:
+  host: 'worldql'
+  push-port: 5555
+
+redis:
+  host: 'redis'
+  port: 6379
+
+slice-mode: true
+num-servers: 2
+world-diameter: 1000
+slice-width: 100
+dmz-size: 10
+starting-port: 25565
+
+# See players on other servers?
+ghosts: true
+
+# Disable these if you want to use Mammoth with MySQLPlayerDataBridge.
+sync-player-inventory: true
+sync-player-health-xp-hunger: true
+sync-player-effects: true
+
+# This is useful if you don't want to slice up the origin (0,0) and keep it all on mammoth_0.
+avoid-slicing-origin: false
+origin-radius: 256
+
+world-name: 'world'
+chat-relay: true
+server-prefix: 'mcserver'
+chat-format: '<{0}> {1}'
+
+# Client (self) Host
+host: 'mcserver1'

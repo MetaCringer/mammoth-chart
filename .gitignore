@@ -1,0 +1,3 @@
+sandbox
+*.env*
+!*example.env*
