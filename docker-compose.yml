@@ -4,6 +4,9 @@ services:
     image: redis:7.0.0
     env_file:
     - redis/.env
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
   mcserver1:
     build: ./server
     env_file:
@@ -13,6 +16,9 @@ services:
     - redis
     volumes:
     - "./config/config1.yml:/app/plugins/Mammoth/config.yml"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.6
   mcserver2:
     build: ./server
     env_file:
@@ -22,19 +28,40 @@ services:
     - redis
     volumes:
     - "./config/config2.yml:/app/plugins/Mammoth/config.yml"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.7
   velocity:
     build: velocity
     ports:
     - "25565:25565"
-
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.8
   postgresql:
     image: postgres:14
     env_file: ./postgres/.env
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.9
   worldql:
     build: ./worldql
     env_file: ./worldql/.env
     depends_on:
     - postgresql
-
+    ports:
+      - "5555:5555"
+      - "8080:8080"
+      - "8081:8081"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.10
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     driver: default
+     config:
+       - subnet: 10.5.0.0/16
 
   

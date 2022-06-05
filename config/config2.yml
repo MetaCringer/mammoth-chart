@@ -1,6 +1,6 @@
 # WorldQL Connection Details
 worldql:
-  host: 'worldql'
+  host: '10.5.0.10'
   push-port: 5555
 
 redis:
@@ -32,4 +32,4 @@ server-prefix: 'mcserver'
 chat-format: '<{0}> {1}'
 
 # Client (self) Host
-host: 'mcserver2'
+host: '10.5.0.7'

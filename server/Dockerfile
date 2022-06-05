@@ -4,6 +4,8 @@ RUN \
   useradd -mu 1001 -g mcserver mcserver
 RUN chmod 777 /tmp
 RUN dnf install -y java-17-openjdk
+RUN dnf install -y net-tools 
+#TODO ^^
 COPY --chown=1001:1001 docker-entrypoint.sh /
 WORKDIR  /app
 RUN chown 1001:1001 ./
@@ -13,4 +15,5 @@ USER mcserver
 RUN echo eula=true > eula.txt
 RUN ls -la
 EXPOSE 25565
+EXPOSE 29000-30000
 ENTRYPOINT ["/docker-entrypoint.sh"]
