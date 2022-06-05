@@ -1,6 +1,6 @@
 #!/bin/bash
-cp postgres/example.env .env
-cp redis/example.env .env
-cp server/example.env .env
-cp velocity/example.env .env
-cp worldql/example.env .env
+cp postgres/example.env postgres/.env
+cp redis/example.env redis/.env
+cp server/example.env server/.env
+cp velocity/example.env velocity/.env
+cp worldql/example.env worldql/.env
