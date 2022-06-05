@@ -12,7 +12,7 @@ num-servers: 2
 world-diameter: 1000
 slice-width: 100
 dmz-size: 10
-starting-port: 25565
+starting-port: 25566
 
 # See players on other servers?
 ghosts: true

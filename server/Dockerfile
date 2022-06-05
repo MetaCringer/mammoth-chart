@@ -14,6 +14,6 @@ COPY --chown=1001:1001 config/ ./
 USER mcserver
 RUN echo eula=true > eula.txt
 RUN ls -la
-EXPOSE 25565
+EXPOSE 25566-25666
 EXPOSE 29000-30000
 ENTRYPOINT ["/docker-entrypoint.sh"]

@@ -55,9 +55,9 @@ ping-passthrough = "DISABLED"
 enable-player-address-logging = true
 
 [servers]
-	mcserver1 = "mcserver1:25565"
-	mcserver2 = "mcserver2:25565"
-	try = ["mcserver1"]
+	mcserver0 = "mcserver0:25566"
+	mcserver1 = "mcserver1:25567"
+	try = ["mcserver0","mcserver1"]
 
 [forced-hosts]
 
