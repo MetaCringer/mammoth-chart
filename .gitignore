@@ -1,3 +1,4 @@
 sandbox
 *.env*
 !*example.env*
+*.code-workspace
